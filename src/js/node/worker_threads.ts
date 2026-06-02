@@ -951,14 +951,13 @@ export default {
   parentPort,
   resourceLimits,
   isMainThread,
+  // No bun thread is a node-internal (loader-hook) thread.
+  isInternalThread: false,
   MessageChannel,
   BroadcastChannel,
   MessagePort,
   getEnvironmentData,
   setEnvironmentData,
-  getHeapSnapshot() {
-    return {};
-  },
   markAsUntransferable,
   markAsUncloneable,
   isMarkedAsUntransferable,
