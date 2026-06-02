@@ -685,9 +685,11 @@ impl ErrorCode {
     pub const SECRETS_AUTH_FAILED: ErrorCode = ErrorCode(312);
     /// `ERR_SECRETS_INTERACTION_REQUIRED` (instanceof Error)
     pub const SECRETS_INTERACTION_REQUIRED: ErrorCode = ErrorCode(313);
+    /// `ERR_PROXY_TUNNEL` (instanceof Error)
+    pub const PROXY_TUNNEL: ErrorCode = ErrorCode(314);
 
     /// == C++ `NODE_ERROR_COUNT`.
-    pub const COUNT: u16 = 314;
+    pub const COUNT: u16 = 315;
 }
 
 // ──────────────────────────────────────────────────────────────────────────
@@ -1045,6 +1047,7 @@ impl ErrorCode {
         ErrorCode::SECRETS_INTERACTION_NOT_ALLOWED;
     pub const ERR_SECRETS_AUTH_FAILED: ErrorCode = ErrorCode::SECRETS_AUTH_FAILED;
     pub const ERR_SECRETS_INTERACTION_REQUIRED: ErrorCode = ErrorCode::SECRETS_INTERACTION_REQUIRED;
+    pub const ERR_PROXY_TUNNEL: ErrorCode = ErrorCode::PROXY_TUNNEL;
 
     // NOTE: `ERR_SYSTEM_ERROR` / `ERR_CHILD_CLOSED_BEFORE_REPLY` intentionally
     // do NOT live here. They belong to the unrelated Zig enum
@@ -1377,6 +1380,7 @@ static CODE_STR: [&str; ErrorCode::COUNT as usize] = [
     "ERR_SECRETS_INTERACTION_NOT_ALLOWED",
     "ERR_SECRETS_AUTH_FAILED",
     "ERR_SECRETS_INTERACTION_REQUIRED",
+    "ERR_PROXY_TUNNEL",
 ];
 
 // ──────────────────────────────────────────────────────────────────────────
